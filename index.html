@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chronicles of Drezbaeryn</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Babel Standalone for in-browser JSX compilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
     <script>
       tailwind.config = {
         theme: {
@@ -39,6 +46,8 @@
         }
       }
     </script>
+    
+    <!-- Global Styles -->
     <style>
       body {
         background-color: #fdfbf7;
@@ -53,23 +62,25 @@
           scrollbar-width: none;
       }
     </style>
-  <script type="importmap">
+
+    <!-- Import Map for Browser Modules -->
+    <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@18.2.0",
-    "react/": "https://esm.sh/react@18.2.0/",
-    "react-dom": "https://esm.sh/react-dom@18.2.0",
-    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
-    "lucide-react": "https://esm.sh/lucide-react@0.344.0",
-    "recharts": "https://esm.sh/recharts@2.12.2?external=react,react-dom",
+    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.294.0",
+    "framer-motion": "https://esm.sh/framer-motion@10.16.5",
+    "recharts": "https://esm.sh/recharts@2.10.3?external=react,react-dom",
     "@google/genai": "https://esm.sh/@google/genai@0.1.1",
-    "framer-motion": "https://esm.sh/framer-motion@11.0.8?external=react,react-dom"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
   }
 }
 </script>
-</head>
+  </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <!-- Load the Main Script with Babel processing -->
+    <script type="text/babel" data-type="module" src="main.js"></script>
   </body>
 </html>
